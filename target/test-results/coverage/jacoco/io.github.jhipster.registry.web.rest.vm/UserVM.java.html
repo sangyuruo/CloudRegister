@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserVM.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JHipster Registry</a> &gt; <a href="index.source.html" class="el_package">io.github.jhipster.registry.web.rest.vm</a> &gt; <span class="el_source">UserVM.java</span></div><h1>UserVM.java</h1><pre class="source lang-java linenums">package io.github.jhipster.registry.web.rest.vm;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Set;
+
+/**
+ * View Model object for representing a user, with his authorities.
+ */
+public class UserVM {
+
+    @NotNull
+    @Size(min = 1, max = 50)
+    private String login;
+
+    private Set&lt;String&gt; authorities;
+
+<span class="fc" id="L18">    public UserVM() {</span>
+<span class="fc" id="L19">    }</span>
+
+<span class="fc" id="L21">    public UserVM(String login, Set&lt;String&gt; authorities) {</span>
+
+<span class="fc" id="L23">        this.login = login;</span>
+<span class="fc" id="L24">        this.authorities = authorities;</span>
+<span class="fc" id="L25">    }</span>
+
+    public String getLogin() {
+<span class="fc" id="L28">        return login;</span>
+    }
+
+    public Set&lt;String&gt; getAuthorities() {
+<span class="fc" id="L32">        return authorities;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L37">        return &quot;UserVM{&quot; +</span>
+            &quot;login='&quot; + login + '\'' +
+            &quot;, authorities=&quot; + authorities +
+            &quot;}&quot;;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../src/main/webapp/app/admin/logs/logs.route.ts"],"names":[],"mappings":";;AAEA,mDAAiD;AAEpC,QAAA,SAAS,GAAU;IAC5B,IAAI,EAAE,SAAS;IACf,SAAS,EAAE,8BAAa;IACxB,IAAI,EAAE;QACF,SAAS,EAAE,SAAS;KACvB;CACJ,CAAC","file":"logs.route.js","sourceRoot":""}

@@ -1,0 +1,4 @@
+export declare class ParseLinks {
+    constructor();
+    parse(header: string): any;
+}

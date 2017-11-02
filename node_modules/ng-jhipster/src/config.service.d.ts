@@ -1,0 +1,7 @@
+import { ModuleConfig } from './config';
+export declare class ConfigService {
+    CONFIG_OPTIONS: ModuleConfig;
+    constructor(moduleConfig?: ModuleConfig);
+    getConfig(): ModuleConfig;
+    private setProperty(property, moduleConfig);
+}

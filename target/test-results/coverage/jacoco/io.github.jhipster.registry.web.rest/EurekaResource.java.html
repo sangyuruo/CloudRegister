@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EurekaResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JHipster Registry</a> &gt; <a href="index.source.html" class="el_package">io.github.jhipster.registry.web.rest</a> &gt; <span class="el_source">EurekaResource.java</span></div><h1>EurekaResource.java</h1><pre class="source lang-java linenums">package io.github.jhipster.registry.web.rest;
+
+import com.codahale.metrics.annotation.Timed;
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.config.ConfigurationManager;
+import com.netflix.discovery.shared.Application;
+import com.netflix.eureka.EurekaServerContext;
+import com.netflix.eureka.EurekaServerContextHolder;
+import com.netflix.eureka.registry.PeerAwareInstanceRegistry;
+import com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl;
+import com.netflix.eureka.resources.StatusResource;
+import com.netflix.eureka.util.StatusInfo;
+import io.github.jhipster.registry.web.rest.vm.EurekaVM;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Controller for viewing Eureka data.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+<span class="nc" id="L36">public class EurekaResource {</span>
+
+<span class="nc" id="L38">    private final Logger log = LoggerFactory.getLogger(EurekaResource.class);</span>
+
+    /**
+     * GET  /eureka/applications : get Eureka applications information
+     */
+    @GetMapping(&quot;/eureka/applications&quot;)
+    @Timed
+    public ResponseEntity&lt;EurekaVM&gt; eureka() {
+<span class="nc" id="L46">        EurekaVM eurekaVM = new EurekaVM();</span>
+<span class="nc" id="L47">        eurekaVM.setApplications(getApplications());</span>
+<span class="nc" id="L48">        return new ResponseEntity&lt;&gt;(eurekaVM, HttpStatus.OK);</span>
+    }
+
+    private List&lt;Map&lt;String, Object&gt;&gt; getApplications() {
+<span class="nc" id="L52">        List&lt;Application&gt; sortedApplications = getRegistry().getSortedApplications();</span>
+<span class="nc" id="L53">        ArrayList&lt;Map&lt;String, Object&gt;&gt; apps = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        for (Application app : sortedApplications) {</span>
+<span class="nc" id="L55">            LinkedHashMap&lt;String, Object&gt; appData = new LinkedHashMap&lt;&gt;();</span>
+<span class="nc" id="L56">            apps.add(appData);</span>
+<span class="nc" id="L57">            appData.put(&quot;name&quot;, app.getName());</span>
+<span class="nc" id="L58">            List&lt;Map&lt;String, Object&gt;&gt; instances = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">            for (InstanceInfo info : app.getInstances()) {</span>
+<span class="nc" id="L60">                Map&lt;String, Object&gt; instance = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L61">                instance.put(&quot;instanceId&quot;, info.getInstanceId());</span>
+<span class="nc" id="L62">                instance.put(&quot;homePageUrl&quot;, info.getHomePageUrl());</span>
+<span class="nc" id="L63">                instance.put(&quot;healthCheckUrl&quot;, info.getHealthCheckUrl());</span>
+<span class="nc" id="L64">                instance.put(&quot;statusPageUrl&quot;, info.getStatusPageUrl());</span>
+<span class="nc" id="L65">                instance.put(&quot;status&quot;, info.getStatus().name());</span>
+<span class="nc" id="L66">                instance.put(&quot;metadata&quot;, info.getMetadata());</span>
+<span class="nc" id="L67">                instances.add(instance);</span>
+<span class="nc" id="L68">            }</span>
+<span class="nc" id="L69">            appData.put(&quot;instances&quot;, instances);</span>
+<span class="nc" id="L70">        }</span>
+<span class="nc" id="L71">        return apps;</span>
+    }
+
+    /**
+     * GET  /eureka/lastn : get Eureka registrations
+     */
+    @GetMapping(&quot;/eureka/lastn&quot;)
+    @Timed
+    public ResponseEntity&lt;Map&lt;String, Map&lt;Long, String&gt;&gt;&gt; lastn() {
+<span class="nc" id="L80">        Map&lt;String, Map&lt;Long, String&gt;&gt; lastn = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L81">        PeerAwareInstanceRegistryImpl registry = (PeerAwareInstanceRegistryImpl) getRegistry();</span>
+<span class="nc" id="L82">        Map&lt;Long, String&gt; canceledMap = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L83">        registry.getLastNCanceledInstances().forEach(</span>
+            canceledInstance -&gt; {
+<span class="nc" id="L85">                canceledMap.put(canceledInstance.first(), canceledInstance.second());</span>
+<span class="nc" id="L86">            }</span>
+        );
+<span class="nc" id="L88">        lastn.put(&quot;canceled&quot;, canceledMap);</span>
+<span class="nc" id="L89">        Map&lt;Long, String&gt; registeredMap = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L90">        registry.getLastNRegisteredInstances().forEach(</span>
+            registeredInstance -&gt; {
+<span class="nc" id="L92">                registeredMap.put(registeredInstance.first(), registeredInstance.second());</span>
+<span class="nc" id="L93">            }</span>
+        );
+<span class="nc" id="L95">        lastn.put(&quot;registered&quot;, registeredMap);</span>
+<span class="nc" id="L96">        return new ResponseEntity&lt;&gt;(lastn, HttpStatus.OK);</span>
+    }
+
+    /**
+     * GET  /eureka/replicas : get Eureka replicas
+     */
+    @GetMapping(&quot;/eureka/replicas&quot;)
+    @Timed
+    public ResponseEntity&lt;List&lt;String&gt;&gt; replicas() {
+<span class="nc" id="L105">        List&lt;String&gt; replicas = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L106">        getServerContext().getPeerEurekaNodes().getPeerNodesView().forEach(</span>
+            node -&gt; {
+                try {
+                    // The URL is parsed in order to remove login/password information
+<span class="nc" id="L110">                    URI uri = new URI(node.getServiceUrl());</span>
+<span class="nc" id="L111">                    replicas.add(uri.getHost() + &quot;:&quot; + uri.getPort());</span>
+<span class="nc" id="L112">                } catch (URISyntaxException e) {</span>
+<span class="nc" id="L113">                    log.warn(&quot;Could not parse peer Eureka node URL: {}&quot;, e.getMessage());</span>
+<span class="nc" id="L114">                }</span>
+<span class="nc" id="L115">            }</span>
+        );
+
+<span class="nc" id="L118">        return new ResponseEntity&lt;&gt;(replicas, HttpStatus.OK);</span>
+    }
+
+    /**
+     * GET  /eureka/status : get Eureka status
+     */
+    @GetMapping(&quot;/eureka/status&quot;)
+    @Timed
+    public ResponseEntity&lt;EurekaVM&gt; eurekaStatus() {
+
+<span class="nc" id="L128">        EurekaVM eurekaVM = new EurekaVM();</span>
+<span class="nc" id="L129">        eurekaVM.setStatus(getEurekaStatus());</span>
+<span class="nc" id="L130">        return new ResponseEntity&lt;&gt;(eurekaVM, HttpStatus.OK);</span>
+    }
+
+    private Map&lt;String, Object&gt; getEurekaStatus() {
+
+<span class="nc" id="L135">        Map&lt;String, Object&gt; stats = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L136">        stats.put(&quot;time&quot;, new Date());</span>
+<span class="nc" id="L137">        stats.put(&quot;currentTime&quot;, StatusResource.getCurrentTimeAsString());</span>
+<span class="nc" id="L138">        stats.put(&quot;upTime&quot;, StatusInfo.getUpTime());</span>
+<span class="nc" id="L139">        stats.put(&quot;environment&quot;, ConfigurationManager.getDeploymentContext()</span>
+<span class="nc" id="L140">            .getDeploymentEnvironment());</span>
+<span class="nc" id="L141">        stats.put(&quot;datacenter&quot;, ConfigurationManager.getDeploymentContext()</span>
+<span class="nc" id="L142">            .getDeploymentDatacenter());</span>
+
+<span class="nc" id="L144">        PeerAwareInstanceRegistry registry = getRegistry();</span>
+
+<span class="nc bnc" id="L146" title="All 2 branches missed.">        stats.put(&quot;isBelowRenewThreshold&quot;, registry.isBelowRenewThresold() == 1);</span>
+
+<span class="nc" id="L148">        populateInstanceInfo(stats);</span>
+
+<span class="nc" id="L150">        return stats;</span>
+    }
+
+    private void populateInstanceInfo(Map&lt;String, Object&gt; model) {
+
+        StatusInfo statusInfo;
+        try {
+<span class="nc" id="L157">            statusInfo = new StatusResource().getStatusInfo();</span>
+<span class="nc" id="L158">        } catch (Exception e) {</span>
+<span class="nc" id="L159">            log.error(e.getMessage());</span>
+<span class="nc" id="L160">            statusInfo = StatusInfo.Builder.newBuilder().isHealthy(false).build();</span>
+<span class="nc" id="L161">        }</span>
+<span class="nc bnc" id="L162" title="All 4 branches missed.">        if (statusInfo != null &amp;&amp; statusInfo.getGeneralStats() != null) {</span>
+<span class="nc" id="L163">            model.put(&quot;generalStats&quot;, statusInfo.getGeneralStats());</span>
+        }
+<span class="nc bnc" id="L165" title="All 4 branches missed.">        if (statusInfo != null &amp;&amp; statusInfo.getInstanceInfo() != null) {</span>
+<span class="nc" id="L166">            InstanceInfo instanceInfo = statusInfo.getInstanceInfo();</span>
+<span class="nc" id="L167">            Map&lt;String, String&gt; instanceMap = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L168">            instanceMap.put(&quot;ipAddr&quot;, instanceInfo.getIPAddr());</span>
+<span class="nc" id="L169">            instanceMap.put(&quot;status&quot;, instanceInfo.getStatus().toString());</span>
+<span class="nc" id="L170">            model.put(&quot;instanceInfo&quot;, instanceMap);</span>
+        }
+<span class="nc" id="L172">    }</span>
+
+    private PeerAwareInstanceRegistry getRegistry() {
+<span class="nc" id="L175">        return getServerContext().getRegistry();</span>
+    }
+
+    private EurekaServerContext getServerContext() {
+<span class="nc" id="L179">        return EurekaServerContextHolder.getInstance().getServerContext();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

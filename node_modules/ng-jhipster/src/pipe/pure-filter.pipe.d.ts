@@ -1,0 +1,5 @@
+import { PipeTransform } from '@angular/core';
+import { FilterPipe } from './filter.pipe';
+export declare class PureFilterPipe extends FilterPipe implements PipeTransform {
+    transform(input: Array<any>, filter: string, field: string): any;
+}

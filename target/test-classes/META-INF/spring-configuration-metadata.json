@@ -1,0 +1,9 @@
+{
+  "groups": [{
+    "name": "application",
+    "sourceType": "com.emcloud.core.registry.config.ApplicationProperties",
+    "type": "com.emcloud.core.registry.config.ApplicationProperties"
+  }],
+  "hints": [],
+  "properties": []
+}

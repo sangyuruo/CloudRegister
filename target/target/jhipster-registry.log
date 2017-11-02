@@ -1,0 +1,190 @@
+2017-10-31 22:54:35.617  INFO 53552 --- [main] i.g.j.registry.JHipsterRegistryApp       : The following profiles are active: dev,native
+2017-10-31 22:54:40.149  WARN 53552 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-31 22:54:40.723  INFO 53552 --- [main] i.g.j.registry.config.WebConfigurer      : Web application configuration, using profiles: dev
+2017-10-31 22:54:40.732  INFO 53552 --- [main] i.g.j.registry.config.WebConfigurer      : Web application fully configured
+2017-10-31 22:54:47.031  WARN 53552 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-31 22:54:47.362  INFO 53552 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2017-10-31 22:54:47.362  INFO 53552 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2017-10-31 22:54:47.376  INFO 53552 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1509461687376 with initial instances count: 0
+2017-10-31 22:54:47.598  INFO 53552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-31 22:54:47.599  INFO 53552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-31 22:54:47.599  INFO 53552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-31 22:54:47.599  INFO 53552 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-31 22:54:53.132  WARN 53552 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with key 'zuulEndpoint' has been registered as an MBean but has no exposed attributes or operations
+2017-10-31 22:54:53.578  INFO 53552 --- [main] i.g.j.registry.JHipsterRegistryApp       : Started JHipsterRegistryApp in 45.606 seconds (JVM running for 46.56)
+2017-10-31 22:54:58.584  INFO 53552 --- [main] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761
+	External: 	http://192.168.0.106:8761
+	Profile(s): 	[dev, native]
+----------------------------------------------------------
+2017-10-31 22:54:58.585 ERROR 53552 --- [main] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+Your JWT secret key is not configured using Spring Cloud Config, you will not be able to 
+use the JHipster Registry dashboards to monitor external applications. 
+Please read the documentation at http://www.jhipster.tech/jhipster-registry/
+----------------------------------------------------------
+2017-10-31 22:55:09.029  WARN 53552 --- [XNIO-2 task-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-31 22:55:15.803  INFO 53552 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-31 22:55:15.803  INFO 53552 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-31 22:55:15.804  INFO 53552 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-31 22:55:15.804  INFO 53552 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-31 22:55:21.292  WARN 53552 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDOU - HXCloudOU:a400470f2024287b263f67cec0a0efce
+2017-10-31 22:55:21.293  WARN 53552 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDOU - HXCloudOU:a400470f2024287b263f67cec0a0efce
+2017-10-31 22:55:23.539  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 22:55:53.487  WARN 53552 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDOU/HXCloudOU:a400470f2024287b263f67cec0a0efce
+2017-10-31 22:55:53.567  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 22:56:10.677  WARN 53552 --- [XNIO-2 task-6] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-31 22:56:22.128  WARN 53552 --- [XNIO-2 task-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDUAA - HXCloudUAA:9dc378945983c76a8adc1f6d583aa5e8
+2017-10-31 22:56:22.129  WARN 53552 --- [XNIO-2 task-8] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDUAA - HXCloudUAA:9dc378945983c76a8adc1f6d583aa5e8
+2017-10-31 22:56:23.584  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 22:56:53.487  WARN 53552 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDUAA/HXCloudUAA:9dc378945983c76a8adc1f6d583aa5e8
+2017-10-31 22:56:53.606  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:00:11.775  WARN 53552 --- [XNIO-2 task-11] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-31 23:00:24.112  WARN 53552 --- [XNIO-2 task-13] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDOU - HXCloudOU:b884d4fb85da8066b2de34daa54d37a9
+2017-10-31 23:00:24.113  WARN 53552 --- [XNIO-2 task-13] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDOU - HXCloudOU:b884d4fb85da8066b2de34daa54d37a9
+2017-10-31 23:00:28.729  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:00:53.495  WARN 53552 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDOU/HXCloudOU:b884d4fb85da8066b2de34daa54d37a9
+2017-10-31 23:00:53.744  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:05:46.294  WARN 53552 --- [XNIO-2 task-22] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-31 23:06:41.341  WARN 53552 --- [XNIO-2 task-26] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDUAA - HXCloudUAA:e32e88050c73ce1d5485c38dc1a1bed8
+2017-10-31 23:06:41.341  WARN 53552 --- [XNIO-2 task-26] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDUAA - HXCloudUAA:e32e88050c73ce1d5485c38dc1a1bed8
+2017-10-31 23:06:43.954  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:06:53.501  WARN 53552 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDUAA/HXCloudUAA:e32e88050c73ce1d5485c38dc1a1bed8
+2017-10-31 23:06:53.962  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:07:39.447  WARN 53552 --- [XNIO-2 task-29] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-10-31 23:07:51.894  WARN 53552 --- [XNIO-2 task-32] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDUAA - HXCloudUAA:5797b232d944c732936395760dc45424
+2017-10-31 23:07:51.895  WARN 53552 --- [XNIO-2 task-32] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDUAA - HXCloudUAA:5797b232d944c732936395760dc45424
+2017-10-31 23:07:53.999  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:07:59.774  WARN 53552 --- [XNIO-2 task-39] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDOU - HXCloudOU:ed62c12b9427d91c51ff84ed0538ed30
+2017-10-31 23:07:59.775  WARN 53552 --- [XNIO-2 task-39] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDOU - HXCloudOU:ed62c12b9427d91c51ff84ed0538ed30
+2017-10-31 23:08:04.007  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:08:07.503  WARN 53552 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.cluster.ReplicationTask       : The replication of task HXCLOUDUAA/HXCloudUAA:5797b232d944c732936395760dc45424:Heartbeat@localhost failed with response code 409
+2017-10-31 23:08:53.505  WARN 53552 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDOU/HXCloudOU:ed62c12b9427d91c51ff84ed0538ed30
+2017-10-31 23:08:54.042  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:08:56.698  WARN 53552 --- [XNIO-2 task-13] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDOU - HXCloudOU:2e5f5d2a5b9757acf7799b6abfc2699c
+2017-10-31 23:08:56.698  WARN 53552 --- [XNIO-2 task-13] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDOU - HXCloudOU:2e5f5d2a5b9757acf7799b6abfc2699c
+2017-10-31 23:08:59.048  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:32:24.866  WARN 53552 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDWEB - HXCloudWeb:95b04ab01b8f0cd29ae1d865e52505b8
+2017-10-31 23:32:24.866  WARN 53552 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDWEB - HXCloudWeb:95b04ab01b8f0cd29ae1d865e52505b8
+2017-10-31 23:32:25.136  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:32:53.561  WARN 53552 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDWEB/HXCloudWeb:95b04ab01b8f0cd29ae1d865e52505b8
+2017-10-31 23:32:55.159  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:37:40.073  WARN 53552 --- [XNIO-2 task-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDWEB - HXCloudWeb:a6a51912572524cf9be973c55cb6dbc9
+2017-10-31 23:37:40.074  WARN 53552 --- [XNIO-2 task-6] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDWEB - HXCloudWeb:a6a51912572524cf9be973c55cb6dbc9
+2017-10-31 23:37:40.327  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:39:53.572  WARN 53552 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDWEB/HXCloudWeb:a6a51912572524cf9be973c55cb6dbc9
+2017-10-31 23:39:55.414  INFO 53552 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:40:06.352  INFO 53552 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2017-10-31 23:40:06.353  INFO 53552 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2017-10-31 23:40:06.397  WARN 53552 --- [Thread-15] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-31 23:42:02.699  INFO 55308 --- [main] i.g.j.registry.JHipsterRegistryApp       : The following profiles are active: dev,native
+2017-10-31 23:42:07.713  WARN 55308 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-31 23:42:08.378  INFO 55308 --- [main] i.g.j.registry.config.WebConfigurer      : Web application configuration, using profiles: dev
+2017-10-31 23:42:08.387  INFO 55308 --- [main] i.g.j.registry.config.WebConfigurer      : Web application fully configured
+2017-10-31 23:42:13.698  WARN 55308 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-10-31 23:42:13.988  INFO 55308 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2017-10-31 23:42:13.989  INFO 55308 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2017-10-31 23:42:13.998  INFO 55308 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1509464533998 with initial instances count: 0
+2017-10-31 23:42:14.191  INFO 55308 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-31 23:42:14.191  INFO 55308 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-31 23:42:14.191  INFO 55308 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-31 23:42:14.191  INFO 55308 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-31 23:42:19.603  WARN 55308 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with key 'zuulEndpoint' has been registered as an MBean but has no exposed attributes or operations
+2017-10-31 23:42:20.081  INFO 55308 --- [main] i.g.j.registry.JHipsterRegistryApp       : Started JHipsterRegistryApp in 44.625 seconds (JVM running for 45.187)
+2017-10-31 23:42:23.873  INFO 55308 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-10-31 23:42:23.874  INFO 55308 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-10-31 23:42:23.874  INFO 55308 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-10-31 23:42:23.874  INFO 55308 --- [XNIO-2 task-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-10-31 23:42:24.765  WARN 55308 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDOU - HXCloudOU:2e5f5d2a5b9757acf7799b6abfc2699c
+2017-10-31 23:42:24.766  WARN 55308 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDOU - HXCloudOU:2e5f5d2a5b9757acf7799b6abfc2699c
+2017-10-31 23:42:25.017  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:42:25.086  INFO 55308 --- [main] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761
+	External: 	http://192.168.0.106:8761
+	Profile(s): 	[dev, native]
+----------------------------------------------------------
+2017-10-31 23:42:25.087 ERROR 55308 --- [main] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+Your JWT secret key is not configured using Spring Cloud Config, you will not be able to 
+use the JHipster Registry dashboards to monitor external applications. 
+Please read the documentation at http://www.jhipster.tech/jhipster-registry/
+----------------------------------------------------------
+2017-10-31 23:45:00.863  WARN 55308 --- [XNIO-2 task-22] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDUAA - HXCloudUAA:9d0b1717374ba6b78eb63f7ba36e56e5
+2017-10-31 23:45:00.864  WARN 55308 --- [XNIO-2 task-22] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDUAA - HXCloudUAA:9d0b1717374ba6b78eb63f7ba36e56e5
+2017-10-31 23:45:05.118  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:49:00.341  WARN 55308 --- [XNIO-2 task-10] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDWEB - HXCloudWeb:dc41779d9846231790c0888c7e0e194a
+2017-10-31 23:49:00.342  WARN 55308 --- [XNIO-2 task-10] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDWEB - HXCloudWeb:dc41779d9846231790c0888c7e0e194a
+2017-10-31 23:49:05.281  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-10-31 23:51:19.997  WARN 55308 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDWEB/HXCloudWeb:dc41779d9846231790c0888c7e0e194a
+2017-10-31 23:51:20.369  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 01:26:33.605  WARN 55308 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDUAA/HXCloudUAA:9d0b1717374ba6b78eb63f7ba36e56e5
+2017-11-01 01:26:34.520  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 01:26:35.253  WARN 55308 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDUAA - HXCloudUAA:9d0b1717374ba6b78eb63f7ba36e56e5
+2017-11-01 01:26:35.254  WARN 55308 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDUAA - HXCloudUAA:9d0b1717374ba6b78eb63f7ba36e56e5
+2017-11-01 01:26:39.530  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 08:47:12.058  WARN 55308 --- [XNIO-2 task-64] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDWEB - HXCloudWeb:b20fb09eacc6ed845a2deff8410cd8f5
+2017-11-01 08:47:12.059  WARN 55308 --- [XNIO-2 task-64] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDWEB - HXCloudWeb:b20fb09eacc6ed845a2deff8410cd8f5
+2017-11-01 08:47:15.511  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 08:50:27.180  WARN 55308 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDWEB/HXCloudWeb:b20fb09eacc6ed845a2deff8410cd8f5
+2017-11-01 08:50:30.631  INFO 55308 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 08:55:09.110  INFO 55308 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2017-11-01 08:55:09.110  INFO 55308 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2017-11-01 08:55:09.145  WARN 55308 --- [Thread-15] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-01 08:56:10.668  INFO 56590 --- [main] i.g.j.registry.JHipsterRegistryApp       : The following profiles are active: dev,native
+2017-11-01 08:56:16.104  WARN 56590 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-01 08:56:16.634  INFO 56590 --- [main] i.g.j.registry.config.WebConfigurer      : Web application configuration, using profiles: dev
+2017-11-01 08:56:16.642  INFO 56590 --- [main] i.g.j.registry.config.WebConfigurer      : Web application fully configured
+2017-11-01 08:56:21.854  WARN 56590 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-01 08:56:22.147  INFO 56590 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2017-11-01 08:56:22.147  INFO 56590 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2017-11-01 08:56:22.156  INFO 56590 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1509497782156 with initial instances count: 0
+2017-11-01 08:56:22.353  INFO 56590 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-11-01 08:56:22.353  INFO 56590 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-11-01 08:56:22.353  INFO 56590 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-11-01 08:56:22.353  INFO 56590 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-11-01 08:56:27.757  WARN 56590 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with key 'zuulEndpoint' has been registered as an MBean but has no exposed attributes or operations
+2017-11-01 08:56:28.157  INFO 56590 --- [main] i.g.j.registry.JHipsterRegistryApp       : Started JHipsterRegistryApp in 44.581 seconds (JVM running for 45.115)
+2017-11-01 08:56:33.161  INFO 56590 --- [main] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+	Application 'jhipster-registry' is running! Access URLs:
+	Local: 		http://localhost:8761
+	External: 	http://192.168.10.107:8761
+	Profile(s): 	[dev, native]
+----------------------------------------------------------
+2017-11-01 08:56:33.161 ERROR 56590 --- [main] i.g.j.registry.JHipsterRegistryApp       : 
+----------------------------------------------------------
+Your JWT secret key is not configured using Spring Cloud Config, you will not be able to 
+use the JHipster Registry dashboards to monitor external applications. 
+Please read the documentation at http://www.jhipster.tech/jhipster-registry/
+----------------------------------------------------------
+2017-11-01 08:56:37.256  WARN 56590 --- [XNIO-2 task-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : No routes found from RouteLocator
+2017-11-01 08:56:43.845  INFO 56590 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2017-11-01 08:56:43.845  INFO 56590 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2017-11-01 08:56:43.845  INFO 56590 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2017-11-01 08:56:43.846  INFO 56590 --- [XNIO-2 task-2] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2017-11-01 08:56:49.233  WARN 56590 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDOU - HXCloudOU:1bce425e76c4f6d16b64adbdf5092643
+2017-11-01 08:56:49.234  WARN 56590 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDOU - HXCloudOU:1bce425e76c4f6d16b64adbdf5092643
+2017-11-01 08:56:53.117  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 08:57:09.410  WARN 56590 --- [XNIO-2 task-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDUAA - HXCloudUAA:a7c2bfeb43a371913fbab0c50f5121ea
+2017-11-01 08:57:09.410  WARN 56590 --- [XNIO-2 task-8] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDUAA - HXCloudUAA:a7c2bfeb43a371913fbab0c50f5121ea
+2017-11-01 08:57:13.128  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 08:57:28.080  WARN 56590 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for HXCLOUDOU/HXCloudOU:1bce425e76c4f6d16b64adbdf5092643
+2017-11-01 08:57:28.134  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 08:57:58.581  WARN 56590 --- [XNIO-2 task-39] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDOU - HXCloudOU:3334d096964435941aca478e74b20ac3
+2017-11-01 08:57:58.582  WARN 56590 --- [XNIO-2 task-39] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDOU - HXCloudOU:3334d096964435941aca478e74b20ac3
+2017-11-01 08:58:03.154  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 08:58:17.228  WARN 56590 --- [XNIO-2 task-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDWEB - HXCloudWeb:9ac6b323ebd3f9a93205364399aea27c
+2017-11-01 08:58:17.228  WARN 56590 --- [XNIO-2 task-1] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDWEB - HXCloudWeb:9ac6b323ebd3f9a93205364399aea27c
+2017-11-01 08:58:18.163  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 09:20:33.966  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 10:28:57.029  WARN 56590 --- [XNIO-2 task-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: HXCLOUDWEB - HXCloudWeb:b0eb5de5a21afb26444d548ff2095162
+2017-11-01 10:28:57.031  WARN 56590 --- [XNIO-2 task-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): HXCLOUDWEB - HXCloudWeb:b0eb5de5a21afb26444d548ff2095162
+2017-11-01 10:29:01.510  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 14:00:46.297  INFO 56590 --- [pool-4-thread-1] i.g.j.r.service.ZuulUpdaterService       : Zuul routes have changed - refreshing the configuration
+2017-11-01 14:01:01.959  INFO 56590 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2017-11-01 14:01:01.961  INFO 56590 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2017-11-01 14:01:02.181  WARN 56590 --- [Thread-15] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.

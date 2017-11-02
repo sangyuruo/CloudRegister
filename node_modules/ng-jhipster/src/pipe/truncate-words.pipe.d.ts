@@ -1,0 +1,4 @@
+import { PipeTransform } from '@angular/core';
+export declare class TruncateWordsPipe implements PipeTransform {
+    transform(input: string, words: number): string;
+}

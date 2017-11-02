@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../src/main/webapp/app/registry/applications/applications.route.ts"],"names":[],"mappings":";;AAEA,mEAAoE;AAEvD,QAAA,iBAAiB,GAAU;IACpC,IAAI,EAAE,cAAc;IACpB,SAAS,EAAE,iDAAwB;IACnC,IAAI,EAAE;QACF,SAAS,EAAE,cAAc;KAC5B;CACJ,CAAC","file":"applications.route.js","sourceRoot":""}

@@ -1,0 +1,6 @@
+export declare class JhiItemCountComponent {
+    page: number;
+    total: number;
+    itemsPerPage: number;
+    constructor();
+}

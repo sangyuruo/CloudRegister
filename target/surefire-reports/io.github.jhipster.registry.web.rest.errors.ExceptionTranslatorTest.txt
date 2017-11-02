@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: io.github.jhipster.registry.web.rest.errors.ExceptionTranslatorTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.303 sec - in io.github.jhipster.registry.web.rest.errors.ExceptionTranslatorTest

@@ -1,0 +1,11 @@
+export declare class DataUtils {
+    constructor();
+    abbreviate(text: string, append?: string): string;
+    byteSize(base64String: string): string;
+    private _endsWith(suffix, str);
+    private _paddingSize(value);
+    private _size(value);
+    private _formatAsBytes(size);
+    openFile(type: string, data: string): void;
+    toBase64(file: File, cb: Function): void;
+}

@@ -1,0 +1,16 @@
+import { TranslateService } from 'ng2-translate';
+import { ConfigService } from '../config.service';
+export declare class JhiLanguageService {
+    private translateService;
+    private configService;
+    defaultLocation: string;
+    currentLang: string;
+    locations: string[];
+    constructor(translateService: TranslateService, configService: ConfigService);
+    init(): void;
+    changeLanguage(languageKey: string): void;
+    setLocations(locations: string[]): void;
+    addLocation(location: string): void;
+    reload(): void;
+    getCurrent(): Promise<any>;
+}

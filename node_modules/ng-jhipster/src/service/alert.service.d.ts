@@ -1,0 +1,34 @@
+import { Sanitizer } from '@angular/core';
+import { TranslateService } from 'ng2-translate';
+export declare type AlertType = 'success' | 'danger' | 'warning' | 'info';
+export interface Alert {
+    id?: number;
+    type: AlertType;
+    msg: string;
+    params?: any;
+    timeout?: number;
+    toast?: boolean;
+    position?: string;
+    scoped?: boolean;
+    close?: (alerts: Alert[]) => void;
+}
+export declare class AlertService {
+    private sanitizer;
+    private toast;
+    private translateService;
+    private alertId;
+    private alerts;
+    private timeout;
+    constructor(sanitizer: Sanitizer, toast?: boolean, translateService?: TranslateService);
+    clear(): void;
+    get(): Alert[];
+    success(msg: string, params?: any, position?: string): Alert;
+    error(msg: string, params?: any, position?: string): Alert;
+    warning(msg: string, params?: any, position?: string): Alert;
+    info(msg: string, params?: any, position?: string): Alert;
+    private factory(alertOptions);
+    addAlert(alertOptions: Alert, extAlerts: Alert[]): Alert;
+    closeAlert(id: number, extAlerts?: Alert[]): any;
+    closeAlertByIndex(index: number, thisAlerts: Alert[]): Alert[];
+    isToast(): boolean;
+}

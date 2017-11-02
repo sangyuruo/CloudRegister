@@ -1,0 +1,5 @@
+export declare class Base64 {
+    private keyStr;
+    encode(input: any): string;
+    decode(input: any): string;
+}
