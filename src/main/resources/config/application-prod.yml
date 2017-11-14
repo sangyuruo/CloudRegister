@@ -43,7 +43,7 @@ spring:
 #        keyAlias: JHipsterRegistry
 # ===================================================================
 server:
-    port: 18761
+    port: 8761
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
