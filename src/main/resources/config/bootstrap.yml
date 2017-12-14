@@ -12,7 +12,8 @@ spring:
         config:
             server:
                 git:
-                    uri: http://192.168.1.200/platform/EmCloudConfig
+                    uri: ssh://git@gitlab-service:6022/platform/EmCloudConfig.git
+                    strictHostKeyChecking: false
                 native:
                     search-locations: file:./central-config
                 prefix: /config
