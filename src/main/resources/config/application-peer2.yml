@@ -22,7 +22,7 @@
 # ===================================================================
 
 server:
-    port: 8762
+    port: 9002
 
 eureka:
     instance:
@@ -40,4 +40,5 @@ eureka:
         fetch-registry: true
         register-with-eureka: true
         service-url:
-            defaultZone: http://admin:${security.user.password:admin}@eureka-peer-1:8761/eureka/
+            defaultZone: http://admin:${security.user.password:admin}@eureka-peer-1:9001/eureka/,http://admin:${security.user.password:admin}@eureka-peer-2:9002/eureka/,http://admin:${security.user.password:admin}@eureka-peer-3:9003/eureka/
+

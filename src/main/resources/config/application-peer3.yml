@@ -22,11 +22,11 @@
 # ===================================================================
 
 server:
-    port: 9001
+    port: 9003
 
 eureka:
     instance:
-        hostname: eureka-peer-1
+        hostname: eureka-peer-3
     server:
         # see discussion about enable-self-preservation:
         # https://github.com/jhipster/generator-jhipster/issues/3654
@@ -41,3 +41,4 @@ eureka:
         register-with-eureka: true
         service-url:
             defaultZone: http://admin:${security.user.password:admin}@eureka-peer-1:9001/eureka/,http://admin:${security.user.password:admin}@eureka-peer-2:9002/eureka/,http://admin:${security.user.password:admin}@eureka-peer-3:9003/eureka/
+
