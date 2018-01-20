@@ -1,21 +1,46 @@
-# JHipster Registry
+## 以3个节点做为一个集群：
 
-[![Build Status][travis-image]][travis-url]  [![Docker Pulls](https://img.shields.io/docker/pulls/jhipster/jhipster-registry.svg)](https://hub.docker.com/r/jhipster/jhipster-registry/)
+eureka-peer-1  
+eureka-peer-2  
+eureka-peer-3  
+## 配置/etc/hosts
 
-This is the [JHipster](http://jhipster.github.io/) registry service, based on [Spring Cloud Netflix](http://cloud.spring.io/spring-cloud-netflix/), [Eureka](https://github.com/Netflix/eureka) and [Spring Cloud Config](http://cloud.spring.io/spring-cloud-config/).
+127.0.0.1   eureka-peer-1  
+127.0.0.1   eureka-peer-2  
+127.0.0.1   eureka-peer-3 
 
-Full documentation is available on the [JHipster documentation for microservices](http://jhipster.github.io/microservices-architecture).
+## 工程下配置
+### resource/config 下配置文件:   
+application-peer1.yml  
+application-peer2.yml  
+application-peer3.yml  
+### 修改各自的端口以及hostname.
+* defaultZone 设置为:  
+<pre>
+http://admin:${security.user.password:admin}@eureka-peer-1:9001/eureka/,http://admin:${security.user.password:admin}@eureka-peer-2:9002/eureka/,http://admin:${security.user.password:admin}@eureka-peer-3:9003/eureka/
+</pre>
+* 端口  
+application-peer1.yml:  
+port: 9001  
+application-peer2.yml: 	
+port: 9002  
+application-peer3.yml:  
+port: 9003
 
-## Deploy to Heroku
 
-Click this button to deploy your own instance of the registry:
+## 启动方式
+### 先打包  
+./mvnw clean package -Pprod -Dmaven.test.skip=true 
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+### 分别启动3个节点-dev模式  
+target/registry-1.0.1.war --spring.profiles.active=dev,git,peer1  
+target/registry-1.0.1.war --spring.profiles.active=dev,git,peer2  
+target/registry-1.0.1.war --spring.profiles.active=dev,git,peer3  
 
-There are a few limitations when deploying to Heroku.
+## IDEA中调试方法（只调试其中一个节点）
+* 修改bootstrap.yml ，在active中增加peer3 。
 
-* The registry will only work with [native configuration](http://jhipster.github.io/microservices-architecture/#application-configuration-with-the-jhipster-registry) (and not Git config).
-* The registry service cannot be scaled up to multiple dynos to provide redundancy. You must deploy multiple applications (i.e. click the button more than once). This is because Eureka requires distinct URLs to synchronize in-memory state between instances.
+* 右键JHipsterRegistryApp.java ->  debug 
 
-[travis-image]: https://travis-ci.org/jhipster/jhipster-registry.svg?branch=master
-[travis-url]: https://travis-ci.org/jhipster/jhipster-registry
+
+
