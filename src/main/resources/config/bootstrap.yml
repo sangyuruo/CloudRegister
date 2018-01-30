@@ -7,13 +7,10 @@ spring:
     application:
         name: jhipster-registry
     profiles:
-        active: dev,native
+        active: dev,git
 
     cloud:
         # add bus trace -- 2018-01-30
-        bus:
-            trace:
-                enabled: true
         config:
             server:
                 git:
@@ -29,16 +26,18 @@ spring:
             profile: dev # profile(s) of the property source
             label: master # toggle to switch to a different version of the configuration as stored in git
             # it can be set to any label, branch or commit of the config source git repository
-        cloud:
-            stream:
-                kafka:
-                    binder:
-                        brokers: 192.168.2.202
-                        zk-nodes: 192.168.2.202
-                        healthTimeout: 60
-#                    bindings:
-#                        configChannel:
-#                            destination: cloud-config
+        stream:
+            kafka:
+                binder:
+                    brokers: 192.168.2.202
+                    zk-nodes: 192.168.2.202
+                    healthTimeout: 60
+#                bindings:
+#                    configChannel:
+#                        destination: cloud-config
+        bus:
+            trace:
+                enabled: true
 info:
     project:
         version: #project.version#
