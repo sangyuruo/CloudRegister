@@ -57,6 +57,7 @@ local.properties
 *.ipr
 *.ids
 *.orig
+.idea
 classes/
 
 ######################
