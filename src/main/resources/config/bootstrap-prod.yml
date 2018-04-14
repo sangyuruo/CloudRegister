@@ -27,8 +27,8 @@ spring:
         stream:
             kafka:
                 binder:
-                    brokers: 192.168.2.202
-                    zk-nodes: 192.168.2.202
+                    brokers: 192.168.1.200
+                    zk-nodes: 192.168.1.200
                     healthTimeout: 60
         #                bindings:
         #                    configChannel:
