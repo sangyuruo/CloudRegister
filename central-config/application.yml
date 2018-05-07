@@ -4,10 +4,9 @@
 
 # Property used on app startup to check the config server status
 configserver:
-    name: emcloud config server for local files
-    status: Connected to the emcloud config server!
-
-# Default JWT secret token (to be changed in production!)
+    name: emcloud config server
+    status: Welcome Connected to the EmCloud Config Server(master)!
+    
 jhipster:
     security:
         authentication:
